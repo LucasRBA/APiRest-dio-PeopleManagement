@@ -32,5 +32,7 @@ public class Phone {
     @Column(nullable = false)
     private String number;
 
+    @Column(nullable = false, unique= true)
+    private String operadora;
 
 }

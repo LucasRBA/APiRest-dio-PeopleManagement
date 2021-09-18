@@ -38,6 +38,16 @@ public class Person {
 
     private LocalDate birthDate;
 
+    @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false, unique = true)
+    private String estadocivil;
+
+    @Column
+    private String hobbies;
+
+
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Phone> phones;
 }
