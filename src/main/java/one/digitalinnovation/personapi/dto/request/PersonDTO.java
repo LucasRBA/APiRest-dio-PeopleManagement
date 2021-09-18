@@ -31,7 +31,16 @@ public class PersonDTO {
     @CPF
     private String cpf;
 
+
     private String birthDate;
+
+    @NotEmpty
+    private String address;
+
+    @NotEmpty
+    private String estadocivil;
+
+    private String hobbies;
 
     @Valid
     @NotEmpty

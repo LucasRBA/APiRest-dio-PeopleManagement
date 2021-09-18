@@ -12,8 +12,8 @@ import one.digitalinnovation.personapi.entity.Phone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-09-18T16:48:16-0300",
-    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.11 (AdoptOpenJDK)"
+    date = "2021-09-18T18:29:58-0300",
+    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 16.0.2 (Oracle Corporation)"
 )
 public class PersonMapperImpl implements PersonMapper {
 
@@ -32,6 +32,9 @@ public class PersonMapperImpl implements PersonMapper {
         person.setFirstName( personDTO.getFirstName() );
         person.setLastName( personDTO.getLastName() );
         person.setCpf( personDTO.getCpf() );
+        person.setAddress( personDTO.getAddress() );
+        person.setEstadocivil( personDTO.getEstadocivil() );
+        person.setHobbies( personDTO.getHobbies() );
         person.setPhones( phoneDTOListToPhoneList( personDTO.getPhones() ) );
 
         return person;
@@ -52,6 +55,9 @@ public class PersonMapperImpl implements PersonMapper {
         if ( person.getBirthDate() != null ) {
             personDTO.setBirthDate( DateTimeFormatter.ISO_LOCAL_DATE.format( person.getBirthDate() ) );
         }
+        personDTO.setAddress( person.getAddress() );
+        personDTO.setEstadocivil( person.getEstadocivil() );
+        personDTO.setHobbies( person.getHobbies() );
         personDTO.setPhones( phoneListToPhoneDTOList( person.getPhones() ) );
 
         return personDTO;
@@ -67,6 +73,7 @@ public class PersonMapperImpl implements PersonMapper {
         phone.setId( phoneDTO.getId() );
         phone.setType( phoneDTO.getType() );
         phone.setNumber( phoneDTO.getNumber() );
+        phone.setOperadora( phoneDTO.getOperadora() );
 
         return phone;
     }
@@ -94,6 +101,7 @@ public class PersonMapperImpl implements PersonMapper {
         phoneDTO.setId( phone.getId() );
         phoneDTO.setType( phone.getType() );
         phoneDTO.setNumber( phone.getNumber() );
+        phoneDTO.setOperadora( phone.getOperadora() );
 
         return phoneDTO;
     }

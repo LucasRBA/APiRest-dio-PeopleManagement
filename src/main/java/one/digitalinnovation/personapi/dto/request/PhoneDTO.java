@@ -25,4 +25,8 @@ public class PhoneDTO {
     @NotEmpty
     @Size(min = 13, max = 14)
     private String number;
+
+    @NotEmpty
+    @Size(min=2, max=30)
+    private String operadora;
 }
